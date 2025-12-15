@@ -1,6 +1,7 @@
 let currentNumber = "";
 let previousNumber = "";
 let operator = undefined;
+let justCalculated = false;
 
 const outputDisplay = document.querySelector(".output");
 const display = document.querySelector(".display");
@@ -15,6 +16,14 @@ const previousDisplay = document.querySelector(".previousDisplay");
 function setUpNumberButton(){
     numberButtons.forEach((button) => {
         button.addEventListener("click", () => {
+            if (justCalculated) {
+                currentNumber = "";
+                previousNumber = "";
+                operator = undefined;
+                previousDisplay.innerText = "";
+                justCalculated = false;
+            }
+            
             if (button.innerText === '.' && currentNumber.includes('.')) return;
             currentNumber += button.innerText;
 
@@ -30,6 +39,7 @@ function setUpNumberButton(){
 function setUpOperatorButton(){
     operatorButtons.forEach((button) => {
         button.addEventListener("click", () => {
+            justCalculated = false;
             if (currentNumber === "") return;
 
             if (previousNumber !== "" && operator !== undefined) {
@@ -48,27 +58,44 @@ function setUpOperatorButton(){
     });
 }
 
-equalButton.addEventListener("click", () => {
-    if (currentNumber === "" || previousNumber === "" || operator === undefined) return;
+function setEqualButton(){
+    equalButton.addEventListener("click", () => {
+        if (currentNumber === "" || previousNumber === "" || operator === undefined) return;
 
-    let result = operate(operator, previousNumber, currentNumber);
+        if (currentNumber === '0' && operator === '÷'){
+            alert("It is not possible to divide by 0!");
+            return clearCalculator();
+        }
 
-    previousDisplay.innerText = previousNumber + " " + operator + " " + currentNumber + " =";
-    display.innerText = result;
-    currentNumber = result;
-    previousNumber = "";
-    operator = undefined;
-});
+        let result = operate(operator, previousNumber, currentNumber);
 
+        previousDisplay.innerText = previousNumber + " " + operator + " " + currentNumber + " =";
+        display.innerText = result;
+        currentNumber = result;
+        previousNumber = "";
+        operator = undefined;
+        justCalculated = true;
+    });
+}
 
-
-deleteButton.addEventListener("click", () => {
+function clearCalculator(){
     display.innerText = "";
     previousDisplay.innerText = "";
     currentNumber = "";
     previousNumber = "";
     operator = undefined;
-});
+}
+
+function deleteAll(){
+    deleteButton.addEventListener("click", () => {
+        display.innerText = "";
+        previousDisplay.innerText = "";
+        currentNumber = "";
+        previousNumber = "";
+        operator = undefined;
+        justCalculated = false;
+    });
+}
 
 function add(n1, n2) {
     return n1 + n2;
@@ -106,3 +133,5 @@ function operate(operator, n1, n2) {
 
 setUpNumberButton();
 setUpOperatorButton();
+setEqualButton();
+deleteAll();
