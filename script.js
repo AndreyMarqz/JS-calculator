@@ -40,15 +40,23 @@ function setUpOperatorButton(){
     operatorButtons.forEach((button) => {
         button.addEventListener("click", () => {
             justCalculated = false;
+
+            if (currentNumber === "" && operator !== undefined && previousNumber !== ""){
+                operator = button.innerText;
+                display.innerText = previousNumber + " " + operator;
+                return;
+            }
+
             if (currentNumber === "") return;
 
             if (previousNumber !== "" && operator !== undefined) {
                 const result = operate(operator, previousNumber, currentNumber);
                 previousNumber = result;
+
             } else {
                 previousNumber = currentNumber;
             }
-
+            
             operator = button.innerText;
             currentNumber = "";
             
@@ -97,6 +105,39 @@ function deleteAll(){
     });
 }
 
+function clear(){
+    clearButton.addEventListener('click', () => {
+        if (justCalculated) return;
+
+        if (currentNumber !== ""){
+            currentNumber = currentNumber.slice(0, -1);
+        
+            if (operator !== undefined){
+                display.innerText = previousNumber + " " + operator + " " + currentNumber;
+            } else {
+                display.innerText = currentNumber;
+            }
+        }
+
+        else if (operator !== undefined){
+            operator = undefined;
+            display.innerText = previousNumber;
+        }
+
+        else if (previousNumber !== ""){
+            previousNumber = previousNumber.slice(0, -1);
+            display.innerText = previousNumber;
+        }
+
+        else {
+            display.innerText = "";
+        }
+
+        justCalculated = false;
+        
+    });
+}
+
 function add(n1, n2) {
     return n1 + n2;
 }
@@ -135,3 +176,4 @@ setUpNumberButton();
 setUpOperatorButton();
 setEqualButton();
 deleteAll();
+clear();
