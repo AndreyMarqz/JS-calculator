@@ -18,7 +18,7 @@ A fully functional, responsive calculator built from scratch using **HTML**, **C
 ## 🛠️ Technologies Used
 
 * **HTML5:** Semantic structure.
-* **CSS3:** Flexbox/Grid for layout, media queries for responsividade, and styling.
+* **CSS3:** Flexbox for layout, media queries for responsividade, and styling.
 * **JavaScript (ES6+):** Core logic, event listening, and DOM manipulation.
 
 ## 🧠 What I Learned
