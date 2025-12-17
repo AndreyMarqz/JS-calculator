@@ -19,6 +19,7 @@ body {
 #container {
     background: #1d1d1d;
     width: 500px;
+    max-width: 95%;
     padding: 30px;
     border-radius: 10px;
     display: flex;
@@ -168,11 +169,56 @@ footer a:hover .githubIcon {
     opacity: 1;
 }
 
+@media (max-width: 600px) {
+    #container {
+        padding: 20px;
+        gap: 15px;
+    }
 
+    .output {
+        height: 120px;
+        padding: 15px;
+        font-size: 1.5rem;
+    }
 
+    .btn {
+        font-size: 1.3em;
+        height: 60px;
+    }
 
+    footer {
+        bottom: 10px;
+        font-size: 0.8rem;
+    }
 
+    footer .githubIcon {
+        width: 20px;
+        height: 20px;
+    }
+}
 
+@media (max-width: 400px) {
+    #container {
+        padding: 15px;
+        gap: 10px;
+    }
 
+    .output {
+        height: 100px;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
 
+    .btn {
+        font-size: 1.1em;
+        height: 50px;
+    }
 
+    .keyboard {
+        gap: 8px;
+    }
+
+    .widerBtn {
+        gap: 8px;
+    }
+}
