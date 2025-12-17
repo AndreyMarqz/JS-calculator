@@ -9,17 +9,17 @@ A fully functional, responsive calculator built from scratch using **HTML**, **C
 
 ## 📋 Features
 
-* **Arithmetic Operations:** Performs addition, subtraction, multiplication, and division.
+* **Arithmetic Operations:** Performs addition, subtraction, multiplication and division.
 * **Editing Tools:** Includes `C` (delete last digit) and `AC` (clear all) functionality.
-* **Responsive Design:** Fully adaptable layout that works seamlessly on desktops, tablets, and mobile devices.
+* **Responsive Design:** Fully adaptable layout that works seamlessly on desktops, tablets and mobile devices.
 * **Error Handling:** Prevents invalid input sequences (e.g., multiple decimal points).
 * **Modern UI:** Clean interface with interactive hover and click states.
 
 ## 🛠️ Technologies Used
 
 * **HTML5:** Semantic structure.
-* **CSS3:** Flexbox for layout, media queries for responsiveness, and styling.
-* **JavaScript (ES6+):** Core logic, event listening, and DOM manipulation.
+* **CSS3:** Flexbox for layout, media queries for responsiveness and styling.
+* **JavaScript (ES6+):** Core logic, event listening and DOM manipulation.
 
 ## 🧠 What I Learned
 
