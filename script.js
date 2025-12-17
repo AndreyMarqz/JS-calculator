@@ -107,7 +107,7 @@ function deleteAll(){
 
 function clear(){
     clearButton.addEventListener('click', () => {
-        if (justCalculated) return;
+        justCalculated = false;
 
         if (currentNumber !== ""){
             currentNumber = currentNumber.slice(0, -1);
@@ -115,26 +115,19 @@ function clear(){
             if (operator !== undefined){
                 display.innerText = previousNumber + " " + operator + " " + currentNumber;
             } else {
-                display.innerText = currentNumber;
+                display.innerText = currentNumber || "0";
             }
-        }
-
+        } 
         else if (operator !== undefined){
             operator = undefined;
-            display.innerText = previousNumber;
-        }
-
-        else if (previousNumber !== ""){
-            previousNumber = previousNumber.slice(0, -1);
-            display.innerText = previousNumber;
-        }
-
+            currentNumber = previousNumber;
+            previousNumber = "";
+            display.innerText = currentNumber;
+        } 
         else {
-            display.innerText = "";
+            display.innerText = "0";
         }
-
-        justCalculated = false;
-        
+    
     });
 }
 
