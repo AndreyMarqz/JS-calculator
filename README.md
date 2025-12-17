@@ -34,11 +34,3 @@ Building this project was a deep dive into frontend fundamentals. Key takeaways 
 3.  **UI/UX & Responsiveness:**
     * Designed a layout that adjusts to different screen sizes using CSS Media Queries.
     * improved user experience with visual feedback on button clicks.
-
-## 📂 Project Structure
-
-```bash
-├── index.html      # Main HTML structure
-├── style.css       # Styles and responsive design rules
-├── script.js       # Calculator logic and DOM interaction
-└── README.md       # Project documentation
