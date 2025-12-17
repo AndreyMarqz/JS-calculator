@@ -2,7 +2,7 @@
 
 ![Project Status](https://img.shields.io/badge/status-complete-green) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-A fully functional, responsive calculator built from scratch using **HTML**, **CSS**, and **JavaScript**. This project was developed to practice DOM manipulation, complex logic handling, and responsive UI design.
+A fully functional, responsive calculator built from scratch using **HTML**, **CSS**, and **JavaScript**. This project was developed to practice DOM manipulation, complex logic handling and responsive UI design.
 
 ## 🚀 Live Demo
 [Click here to access the live demo](https://andreymarqz.github.io/JS-calculator/)
