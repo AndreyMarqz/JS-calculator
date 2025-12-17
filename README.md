@@ -5,7 +5,7 @@
 A fully functional, responsive calculator built from scratch using **HTML**, **CSS**, and **JavaScript**. This project was developed to practice DOM manipulation, complex logic handling, and responsive UI design.
 
 ## 🚀 Live Demo
-[Click here to access the live demo]([https://your-username.github.io/your-repo-name](https://andreymarqz.github.io/JS-calculator/))
+[Click here to access the live demo](https://your-username.github.io/your-repo-name](https://andreymarqz.github.io/JS-calculator/))
 
 ## 📋 Features
 
