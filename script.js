@@ -2,9 +2,12 @@ let currentNumber = "";
 let previousNumber = "";
 let operator = undefined;
 let justCalculated = false;
+let isOn = true;
 
 const outputDisplay = document.querySelector(".output");
 const display = document.querySelector(".display");
+const container = document.querySelector("#container");
+const onOffButton = document.querySelector(".onOff");
 const digits = document.querySelectorAll(".btn");
 const operatorButtons = document.querySelectorAll(".operator");
 const numberButtons = document.querySelectorAll(".number");
@@ -131,6 +134,36 @@ function clear(){
     });
 }
 
+function togglePower() {
+    onOffButton.addEventListener('click', () => {
+        isOn = !isOn;
+        
+        if (!isOn) {
+            outputDisplay.classList.add('power-off');
+            container.classList.add('calculator-off');
+
+            digits.forEach(button => {
+                if (!button.classList.contains('onOff')) {
+                    button.disabled = true;
+                }
+            });
+
+            currentNumber = "";
+            previousNumber = "";
+            operator = undefined;
+        } else {
+            outputDisplay.classList.remove('power-off');
+            container.classList.remove('calculator-off');
+            display.innerText = "";
+            previousDisplay.innerText = "";
+
+            digits.forEach(button => {
+                button.disabled = false;
+            });
+        }
+    });
+}
+
 function add(n1, n2) {
     return n1 + n2;
 }
@@ -170,3 +203,4 @@ setUpOperatorButton();
 setEqualButton();
 deleteAll();
 clear();
+togglePower();
