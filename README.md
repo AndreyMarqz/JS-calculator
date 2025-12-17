@@ -10,7 +10,7 @@ A fully functional, responsive calculator built from scratch using **HTML**, **C
 ## 📋 Features
 
 * **Arithmetic Operations:** Performs addition, subtraction, multiplication, and division.
-* **Editing Tools:** Includes `DEL` (delete last digit) and `RESET`/`C` (clear all) functionality.
+* **Editing Tools:** Includes `C` (delete last digit) and `AC` (clear all) functionality.
 * **Responsive Design:** Fully adaptable layout that works seamlessly on desktops, tablets, and mobile devices.
 * **Error Handling:** Prevents invalid input sequences (e.g., multiple decimal points).
 * **Modern UI:** Clean interface with interactive hover and click states.
@@ -27,7 +27,7 @@ Building this project was a deep dive into frontend fundamentals. Key takeaways 
 
 1.  **JavaScript Logic:**
     * Implemented algorithms to handle calculation chains.
-    * Created the logic for the "Delete" button (removing the last string character) and "Reset" functionality.
+    * Created the logic for the "Clear" button (removing the last string character) and "Reset/AC" functionality.
 2.  **Debugging & Problem Solving:**
     * Fixed various bugs related to floating-point precision.
     * Solved edge cases, such as preventing the user from entering multiple decimal points in a single number.
